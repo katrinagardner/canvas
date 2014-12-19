@@ -9,4 +9,4 @@ var RickNash= new hockey(14, 7, 21, 73);
 
 console.log(RickNash);
 
-//add function under var RickNash new will be you want to do something extra beside var hockey function. 
+// var RickNash=new hockey(14,7,21,73); and console.log(RickNash); will print out { goals: 14, assists: 7, points: 21, shots: 73 }
