@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<body>
+
+  <canvas id="the_canvas" width="700" height="700"></canvas>
+  <script>
+  var canvas = document.getElementById('the_canvas');
+  var ctx = canvas.getContext('2d');
+
+
+/*
+var Square=function(x,y,width,height,color){
+  this.x=x;
+  this.y=y;
+  this.width=width;
+  this.height=height;
+  this.color=color;
+
+  this.draw=function(){
+    ctx.fillStyle=this.color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+  }
+}
+
+var drawsquare = new Square(20,20,40,40,"blue"); //x,y are position of the square.
+drawsquare.draw();
+*/
+
+/*
+var RandomSquare=function(width,height,color){
+  this.width=width;
+  this.height=height;
+  this.color=color;
+  this.x=Math.floor(Math.random()*canvas.width);
+  this.y=Math.floor(Math.random()*canvas.height);
+
+  this.draw= function(){
+    ctx.fillStyle=this.color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+  }
+}
+
+var createXSquares = function(){
+  var array=[];
+  for (var i=0; i<10; i++){
+  var square = new RandomSquare(50,50,"yellow");
+  array.push(square);
+    //array.push(new RandomSquare(50,50,"red")); this is the shortcut.
+  }
+  return array;  // whenever have loop should have return.
+}
+
+var drawsquare = function(){
+  var draw1 = createXSquares();
+  for (var j=0; j<draw1.length;j++){
+    draw1[j].draw();
+  }
+}
+
+setInterval(drawsquare,1000);
+*/
+
+
+
+var y = 100;
+var num = 10;
+
+var drop = function(){
+  if(num >0){
+    y += 20;
+    num --;
+  };
+
+// clear background
+
+ctx.beginPath();
+ctx.fillStyle = "yellow";
+ctx.fillRect (0, 0, 800, 600);
+
+
+//ball
+ctx.fillStyle = "green";
+ctx.beginPath();
+ctx.arc(350,y,50,0,Math.PI*2,true);
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "red";
+ctx.fillRect(350,100, 5, 150);
+ctx.fill();
+ctx.closePath()
+
+}
+
+setInterval(drop,1000);
+
+
+</script>
+
+
+
+</body>
+
+
+
+
+
+
+</html>
